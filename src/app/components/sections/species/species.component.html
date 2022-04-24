@@ -1,0 +1,11 @@
+<div class="row">
+  <div class="col-sm-4 p-bottom" *ngFor="let specie of species">
+    <div class="card">
+      <div class="card-body">
+        <a href="species/{{specie.id}}" class="row ">
+          <h6 class="p-3 text-center">{{specie.name}}</h6>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<div class="row">
+  <div class="col-sm-4 p-bottom" *ngFor="let vehicle of vehicles">
+    <div class="card">
+      <div class="card-body">
+        <a href="vehicles/{{vehicle.id}}" class="row ">
+          <h6 class="p-3 text-center">{{vehicle.name}}</h6>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

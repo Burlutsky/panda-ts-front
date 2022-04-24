@@ -1,0 +1,51 @@
+<div class="">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label class="form-label"><h4>{{film.title}}</h4></label>
+      <div class="form-text">Title</div>
+      <input formControlName="title" type="text"
+             [ngClass]="{'form-control' : true,'error': f.title.invalid && (f.title.dirty || f.title.touched)}">
+      <div class="form-text">Episode id</div>
+      <input formControlName="episode_id" type="text"
+             [ngClass]="{'form-control' : true,'error': f.episode_id.invalid && (f.episode_id.dirty || f.episode_id.touched)}">
+      <div class="form-text" >Opening crawl</div>
+      <textarea formControlName="opening_crawl" type="text" rows="5"
+                [ngClass]="{'form-control' : true,'error': f.opening_crawl.invalid && (f.opening_crawl.dirty || f.opening_crawl.touched)}">
+      </textarea>
+      <div class="form-text">Director</div>
+      <input formControlName="director" type="text"
+             [ngClass]="{'form-control' : true,'error': f.director.invalid && (f.director.dirty || f.director.touched)}">
+      <div class="form-text">Producer</div>
+      <input formControlName="producer" type="text"
+             [ngClass]="{'form-control' : true,'error': f.producer.invalid && (f.producer.dirty || f.producer.touched)}">
+      <div class="form-text">Release date</div>
+      <input formControlName="release_date" type="text"
+             [ngClass]="{'form-control' : true,'error': f.release_date.invalid && (f.release_date.dirty || f.release_date.touched)}">
+      <div class="form-text">Characters</div>
+      <input formControlName="characters" type="text"
+             [ngClass]="{'form-control' : true,'error': f.characters.invalid && (f.characters.dirty || f.characters.touched)}">
+      <div class="form-text">Planets</div>
+      <input formControlName="planets" type="text"
+             [ngClass]="{'form-control' : true,'error': f.planets.invalid && (f.planets.dirty || f.planets.touched)}">
+      <div class="form-text">Species</div>
+      <input formControlName="species" type="text"
+             [ngClass]="{'form-control' : true,'error': f.species.invalid && (f.species.dirty || f.species.touched)}">
+      <div class="form-text">Vehicles</div>
+      <input formControlName="vehicles" type="text"
+             [ngClass]="{'form-control' : true,'error': f.vehicles.invalid && (f.vehicles.dirty || f.vehicles.touched)}">
+      <div class="form-text">Starships</div>
+      <input formControlName="starships" type="text"
+             [ngClass]="{'form-control' : true,'error': f.starships.invalid && (f.starships.dirty || f.starships.touched)}">
+      <div class="form-text">Created</div>
+      <input formControlName="created" type="text"
+             [ngClass]="{'form-control' : true,'error': f.created.invalid && (f.created.dirty || f.created.touched)}">
+      <div class="form-text">Edited</div>
+      <input formControlName="edited" type="text"
+             [ngClass]="{'form-control' : true,'error': f.edited.invalid && (f.edited.dirty || f.edited.touched)}">
+      <div class="form-text">URL</div>
+      <input formControlName="url" type="text"
+             [ngClass]="{'form-control' : true,'error': f.url.invalid && (f.url.dirty || f.url.touched)}">
+    </div>
+    <button [disabled]="form.invalid" type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

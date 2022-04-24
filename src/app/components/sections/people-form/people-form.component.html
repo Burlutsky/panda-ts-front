@@ -1,0 +1,53 @@
+<div class="">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label class="form-label"><h4>{{person.name}}</h4></label>
+      <div class="form-text">Name</div>
+      <input formControlName="name" type="text"
+             [ngClass]="{'form-control' : true,'error': f.name.invalid && (f.name.dirty || f.name.touched)}">
+      <div class="form-text">Height</div>
+      <input formControlName="height" type="text"
+             [ngClass]="{'form-control' : true,'error': f.height.invalid && (f.height.dirty || f.height.touched)}">
+      <div class="form-text">Mass</div>
+      <input formControlName="mass" type="text"
+             [ngClass]="{'form-control' : true,'error': f.mass.invalid && (f.mass.dirty || f.mass.touched)}">
+      <div class="form-text">Hair color</div>
+      <input formControlName="hair_color" type="text"
+             [ngClass]="{'form-control' : true,'error': f.hair_color.invalid && (f.hair_color.dirty || f.hair_color.touched)}">
+      <div class="form-text">Skin color</div>
+      <input formControlName="skin_color" type="text"
+             [ngClass]="{'form-control' : true,'error': f.skin_color.invalid && (f.skin_color.dirty || f.skin_color.touched)}">
+      <div class="form-text">Birth year</div>
+      <input formControlName="birth_year" type="text"
+             [ngClass]="{'form-control' : true,'error': f.birth_year.invalid && (f.birth_year.dirty || f.birth_year.touched)}">
+      <div class="form-text">Gender</div>
+      <input formControlName="gender" type="text"
+             [ngClass]="{'form-control' : true,'error': f.gender.invalid && (f.gender.dirty || f.gender.touched)}">
+      <div class="form-text">Home world</div>
+      <input formControlName="homeworld" type="text"
+             [ngClass]="{'form-control' : true,'error': f.homeworld.invalid && (f.homeworld.dirty || f.homeworld.touched)}">
+      <div class="form-text">Films</div>
+      <input formControlName="films" type="text"
+             [ngClass]="{'form-control' : true,'error': f.films.invalid && (f.films.dirty || f.films.touched)}">
+      <div class="form-text">Species</div>
+      <input formControlName="species" type="text"
+             [ngClass]="{'form-control' : true,'error': f.species.invalid && (f.species.dirty || f.species.touched)}">
+      <div class="form-text">Vehicles</div>
+      <input formControlName="vehicles" type="text"
+             [ngClass]="{'form-control' : true,'error': f.vehicles.invalid && (f.vehicles.dirty || f.vehicles.touched)}">
+      <div class="form-text">Starships</div>
+      <input formControlName="starships" type="text"
+             [ngClass]="{'form-control' : true,'error': f.starships.invalid && (f.starships.dirty || f.starships.touched)}">
+      <div class="form-text">Created</div>
+      <input formControlName="created" type="text"
+             [ngClass]="{'form-control' : true,'error': f.created.invalid && (f.created.dirty || f.created.touched)}">
+      <div class="form-text">Edited</div>
+      <input formControlName="edited" type="text"
+             [ngClass]="{'form-control' : true,'error': f.edited.invalid && (f.edited.dirty || f.edited.touched)}">
+      <div class="form-text">URL</div>
+      <input formControlName="url" type="text"
+             [ngClass]="{'form-control' : true,'error': f.url.invalid && (f.url.dirty || f.url.touched)}">
+    </div>
+    <button [disabled]="form.invalid" type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
