@@ -33,7 +33,6 @@ export class PlanetsFormComponent implements OnInit {
       terrain: '',
       surface_water: '',
       population: '',
-      people: [],
       films: [],
       created: '',
       edited: '',
@@ -77,6 +76,32 @@ export class PlanetsFormComponent implements OnInit {
   get f() {return this.form.controls}
 
   onSubmit() {
+    if (this.form.invalid) {
+      return;
+    }
 
+    Object.assign(this.planet, this.form.value);
+
+    if (this.id) {
+      this.updatePlanet();
+    } else {
+      this.storePlanet();
+    }
+  }
+
+  private storePlanet() {
+    this.planetService.storePlanet(this.planet).subscribe((data) => {
+      if (data) {
+        this.route.navigate(['planets']);
+      }
+    });
+  }
+
+  private updatePlanet() {
+    this.planetService.updatePlanet(this.planet).subscribe((data) => {
+      if (data) {
+        this.route.navigate(['planets']);
+      }
+    });
   }
 }

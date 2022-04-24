@@ -29,7 +29,6 @@ export class FilmService {
   getFilm(id: number): Observable<Film> {
     return this.http.get<ResponseHttp>(environment.apiUrl + 'api/films/' + id).pipe(
       map((data) => {
-        console.log(data);
         return data.data.item;
       }),
       catchError((error) => {

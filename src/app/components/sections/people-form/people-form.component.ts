@@ -73,7 +73,6 @@ export class PeopleFormComponent implements OnInit {
       this.peopleService.getPerson(this.id).subscribe((data)=> {
         if (data) {
           this.person = data;
-          console.log(this.person);
           this.form.patchValue(this.person);
         }
       });
@@ -99,7 +98,7 @@ export class PeopleFormComponent implements OnInit {
   private storePerson() {
     this.peopleService.storePerson(this.person).subscribe((data) => {
       if (data) {
-        this.route.navigate(['']);
+        this.route.navigate(['people']);
       }
     });
   }
@@ -107,7 +106,7 @@ export class PeopleFormComponent implements OnInit {
   private updatePerson() {
     this.peopleService.updatePerson(this.person).subscribe((data) => {
       if (data) {
-        this.route.navigate(['']);
+        this.route.navigate(['people']);
       }
     });
   }

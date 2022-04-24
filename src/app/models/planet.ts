@@ -9,7 +9,6 @@ export interface Planet {
   'terrain': string;
   'surface_water': string;
   'population': string;
-  'people': [];
   'films': [];
   'created': string;
   'edited': string;

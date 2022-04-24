@@ -69,7 +69,6 @@ export class FilmsFormComponent implements OnInit {
       this.filmService.getFilm(this.id).subscribe((data)=> {
         if (data) {
           this.film = data;
-          console.log(this.film);
           this.form.patchValue(this.film);
         }
       });
@@ -95,7 +94,7 @@ export class FilmsFormComponent implements OnInit {
   private storeFilm() {
     this.filmService.storeFilm(this.film).subscribe((data) => {
       if (data) {
-        this.route.navigate(['']);
+        this.route.navigate(['films']);
       }
     });
   }
@@ -103,7 +102,7 @@ export class FilmsFormComponent implements OnInit {
   private updateFilm() {
     this.filmService.updateFilm(this.film).subscribe((data) => {
       if (data) {
-        this.route.navigate(['']);
+        this.route.navigate(['films']);
       }
     });
   }
