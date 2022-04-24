@@ -1,1 +1,47 @@
-<p>planets-form works!</p>
+<div class="">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label class="form-label"><h4>{{planet.name}}</h4></label>
+      <div class="form-text">Name</div>
+      <input formControlName="name" type="text"
+             [ngClass]="{'form-control' : true,'error': f.name.invalid && (f.name.dirty || f.name.touched)}">
+      <div class="form-text">Rotation period</div>
+      <input formControlName="rotation_period" type="text"
+             [ngClass]="{'form-control' : true,'error': f.rotation_period.invalid && (f.rotation_period.dirty || f.rotation_period.touched)}">
+      <div class="form-text">Orbital period</div>
+      <input formControlName="orbital_period" type="text"
+             [ngClass]="{'form-control' : true,'error': f.orbital_period.invalid && (f.orbital_period.dirty || f.orbital_period.touched)}">
+      <div class="form-text">Diameter</div>
+      <input formControlName="diameter" type="text"
+             [ngClass]="{'form-control' : true,'error': f.diameter.invalid && (f.diameter.dirty || f.diameter.touched)}">
+      <div class="form-text">Climate</div>
+      <input formControlName="climate" type="text"
+             [ngClass]="{'form-control' : true,'error': f.climate.invalid && (f.climate.dirty || f.climate.touched)}">
+      <div class="form-text">Gravity</div>
+      <input formControlName="gravity" type="text"
+             [ngClass]="{'form-control' : true,'error': f.gravity.invalid && (f.gravity.dirty || f.gravity.touched)}">
+      <div class="form-text">Terrain</div>
+      <input formControlName="terrain" type="text"
+             [ngClass]="{'form-control' : true,'error': f.terrain.invalid && (f.terrain.dirty || f.terrain.touched)}">
+      <div class="form-text">Surface water</div>
+      <input formControlName="surface_water" type="text"
+             [ngClass]="{'form-control' : true,'error': f.surface_water.invalid && (f.surface_water.dirty || f.surface_water.touched)}">
+      <div class="form-text">Population</div>
+      <input formControlName="population" type="text"
+             [ngClass]="{'form-control' : true,'error': f.population.invalid && (f.population.dirty || f.population.touched)}">
+      <div class="form-text">Films</div>
+      <input formControlName="films" type="text"
+             [ngClass]="{'form-control' : true,'error': f.films.invalid && (f.films.dirty || f.films.touched)}">
+      <div class="form-text">Created</div>
+      <input formControlName="created" type="text"
+             [ngClass]="{'form-control' : true,'error': f.created.invalid && (f.created.dirty || f.created.touched)}">
+      <div class="form-text">Edited</div>
+      <input formControlName="edited" type="text"
+             [ngClass]="{'form-control' : true,'error': f.edited.invalid && (f.edited.dirty || f.edited.touched)}">
+      <div class="form-text">URL</div>
+      <input formControlName="url" type="text"
+             [ngClass]="{'form-control' : true,'error': f.url.invalid && (f.url.dirty || f.url.touched)}">
+    </div>
+    <button [disabled]="form.invalid" type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

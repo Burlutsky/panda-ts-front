@@ -25,4 +25,15 @@ export class PlanetService {
       })
     )
   }
+
+  getPlanet(id: number): Observable<Planet> {
+    return this.http.get<ResponseHttp>(environment.apiUrl + 'api/planets/' + id).pipe(
+      map((data) => {
+        return data.data.item;
+      }),
+      catchError((error) => {
+        return throwError(error)
+      })
+    )
+  }
 }
