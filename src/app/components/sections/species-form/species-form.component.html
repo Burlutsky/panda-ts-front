@@ -1,1 +1,53 @@
-<p>species-form works!</p>
+<div class="">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label class="form-label"><h4>{{specie.name}}</h4></label>
+      <div class="form-text">Name</div>
+      <input formControlName="name" type="text"
+             [ngClass]="{'form-control' : true,'error': f.name.invalid && (f.name.dirty || f.name.touched)}">
+      <div class="form-text">Classification</div>
+      <input formControlName="classification" type="text"
+             [ngClass]="{'form-control' : true,'error': f.classification.invalid && (f.classification.dirty || f.classification.touched)}">
+      <div class="form-text">Designation</div>
+      <input formControlName="designation" type="text"
+             [ngClass]="{'form-control' : true,'error': f.designation.invalid && (f.designation.dirty || f.designation.touched)}">
+      <div class="form-text">Average height</div>
+      <input formControlName="average_height" type="text"
+             [ngClass]="{'form-control' : true,'error': f.average_height.invalid && (f.average_height.dirty || f.average_height.touched)}">
+      <div class="form-text">Skin colors</div>
+      <input formControlName="skin_colors" type="text"
+             [ngClass]="{'form-control' : true,'error': f.skin_colors.invalid && (f.skin_colors.dirty || f.skin_colors.touched)}">
+      <div class="form-text">Hair colors</div>
+      <input formControlName="hair_colors" type="text"
+             [ngClass]="{'form-control' : true,'error': f.hair_colors.invalid && (f.hair_colors.dirty || f.hair_colors.touched)}">
+      <div class="form-text">Eye colors</div>
+      <input formControlName="eye_colors" type="text"
+             [ngClass]="{'form-control' : true,'error': f.eye_colors.invalid && (f.eye_colors.dirty || f.eye_colors.touched)}">
+      <div class="form-text">Average lifespan</div>
+      <input formControlName="average_lifespan" type="text"
+             [ngClass]="{'form-control' : true,'error': f.average_lifespan.invalid && (f.average_lifespan.dirty || f.average_lifespan.touched)}">
+      <div class="form-text">Homeworld</div>
+      <input formControlName="homeworld" type="text"
+             [ngClass]="{'form-control' : true,'error': f.homeworld.invalid && (f.homeworld.dirty || f.homeworld.touched)}">
+      <div class="form-text">Language</div>
+      <input formControlName="language" type="text"
+             [ngClass]="{'form-control' : true,'error': f.language.invalid && (f.language.dirty || f.language.touched)}">
+      <div class="form-text">People</div>
+      <input formControlName="people" type="text"
+             [ngClass]="{'form-control' : true,'error': f.people.invalid && (f.people.dirty || f.people.touched)}">
+      <div class="form-text">Films</div>
+      <input formControlName="films" type="text"
+             [ngClass]="{'form-control' : true,'error': f.films.invalid && (f.films.dirty || f.films.touched)}">
+      <div class="form-text">Created</div>
+      <input formControlName="created" type="text"
+             [ngClass]="{'form-control' : true,'error': f.created.invalid && (f.created.dirty || f.created.touched)}">
+      <div class="form-text">Edited</div>
+      <input formControlName="edited" type="text"
+             [ngClass]="{'form-control' : true,'error': f.edited.invalid && (f.edited.dirty || f.edited.touched)}">
+      <div class="form-text">URL</div>
+      <input formControlName="url" type="text"
+             [ngClass]="{'form-control' : true,'error': f.url.invalid && (f.url.dirty || f.url.touched)}">
+    </div>
+    <button [disabled]="form.invalid" type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

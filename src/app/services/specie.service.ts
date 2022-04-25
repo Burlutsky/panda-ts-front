@@ -25,4 +25,37 @@ export class SpecieService {
       })
     )
   }
+
+  getSpecie(id: number): Observable<Specie> {
+    return this.http.get<ResponseHttp>(environment.apiUrl + 'api/species/' + id).pipe(
+      map((data) => {
+        return data.data.item;
+      }),
+      catchError((error) => {
+        return throwError(error)
+      })
+    )
+  }
+
+  storeSpecie(specie: Specie): Observable<Specie> {
+    return this.http.post<ResponseHttp>(environment.apiUrl + 'api/species' + specie.id, specie).pipe(
+      map((data) => {
+        return data.data.item;
+      }),
+      catchError((error) => {
+        return throwError(error);
+      })
+    )
+  }
+
+  updateSpecie(specie: Specie): Observable<Specie> {
+    return this.http.post<ResponseHttp>(environment.apiUrl + 'api/species/' + specie.id, specie).pipe(
+      map((data) => {
+        return data.data.item;
+      }),
+      catchError((error) => {
+        return throwError(error);
+      })
+    )
+  }
 }

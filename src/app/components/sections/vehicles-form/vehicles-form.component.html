@@ -1,1 +1,56 @@
-<p>vehicles-form works!</p>
+<div class="">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label class="form-label"><h4>{{vehicle.name}}</h4></label>
+      <div class="form-text">Name</div>
+      <input formControlName="name" type="text"
+             [ngClass]="{'form-control' : true,'error': f.name.invalid && (f.name.dirty || f.name.touched)}">
+      <div class="form-text">Model</div>
+      <input formControlName="model" type="text"
+             [ngClass]="{'form-control' : true,'error': f.model.invalid && (f.model.dirty || f.model.touched)}">
+      <div class="form-text">Manufacturer</div>
+      <input formControlName="manufacturer" type="text"
+             [ngClass]="{'form-control' : true,'error': f.manufacturer.invalid && (f.manufacturer.dirty || f.manufacturer.touched)}">
+      <div class="form-text">Cost in credits</div>
+      <input formControlName="cost_in_credits" type="text"
+             [ngClass]="{'form-control' : true,'error': f.cost_in_credits.invalid && (f.cost_in_credits.dirty || f.cost_in_credits.touched)}">
+      <div class="form-text">Length</div>
+      <input formControlName="length" type="text"
+             [ngClass]="{'form-control' : true,'error': f.length.invalid && (f.length.dirty || f.length.touched)}">
+      <div class="form-text">Max atmosphering speed</div>
+      <input formControlName="max_atmosphering_speed" type="text"
+             [ngClass]="{'form-control' : true,'error': f.max_atmosphering_speed.invalid && (f.max_atmosphering_speed.dirty || f.max_atmosphering_speed.touched)}">
+      <div class="form-text">Crew</div>
+      <input formControlName="crew" type="text"
+             [ngClass]="{'form-control' : true,'error': f.crew.invalid && (f.crew.dirty || f.crew.touched)}">
+      <div class="form-text">Passengers</div>
+      <input formControlName="passengers" type="text"
+             [ngClass]="{'form-control' : true,'error': f.passengers.invalid && (f.passengers.dirty || f.passengers.touched)}">
+      <div class="form-text">Cargo capacity</div>
+      <input formControlName="cargo_capacity" type="text"
+             [ngClass]="{'form-control' : true,'error': f.cargo_capacity.invalid && (f.cargo_capacity.dirty || f.cargo_capacity.touched)}">
+      <div class="form-text">Consumables</div>
+      <input formControlName="consumables" type="text"
+             [ngClass]="{'form-control' : true,'error': f.consumables.invalid && (f.consumables.dirty || f.consumables.touched)}">
+      <div class="form-text">Vehicle class</div>
+      <input formControlName="vehicle_class" type="text"
+             [ngClass]="{'form-control' : true,'error': f.vehicle_class.invalid && (f.vehicle_class.dirty || f.vehicle_class.touched)}">
+      <div class="form-text">Pilots</div>
+      <input formControlName="pilots" type="text"
+             [ngClass]="{'form-control' : true,'error': f.pilots.invalid && (f.pilots.dirty || f.pilots.touched)}">
+      <div class="form-text">Films</div>
+      <input formControlName="films" type="text"
+             [ngClass]="{'form-control' : true,'error': f.films.invalid && (f.films.dirty || f.films.touched)}">
+      <div class="form-text">Created</div>
+      <input formControlName="created" type="text"
+             [ngClass]="{'form-control' : true,'error': f.created.invalid && (f.created.dirty || f.created.touched)}">
+      <div class="form-text">Edited</div>
+      <input formControlName="edited" type="text"
+             [ngClass]="{'form-control' : true,'error': f.edited.invalid && (f.edited.dirty || f.edited.touched)}">
+      <div class="form-text">URL</div>
+      <input formControlName="url" type="text"
+             [ngClass]="{'form-control' : true,'error': f.url.invalid && (f.url.dirty || f.url.touched)}">
+    </div>
+    <button [disabled]="form.invalid" type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

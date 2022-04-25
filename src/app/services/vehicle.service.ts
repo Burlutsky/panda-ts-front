@@ -25,4 +25,37 @@ export class VehicleService {
       })
     )
   }
+
+  getVehicle(id: number): Observable<Vehicle> {
+    return this.http.get<ResponseHttp>(environment.apiUrl + 'api/vehicles/' + id).pipe(
+      map((data) => {
+        return data.data.item;
+      }),
+      catchError((error) => {
+        return throwError(error)
+      })
+    )
+  }
+
+  storeVehicle(vehicle: Vehicle): Observable<Vehicle> {
+    return this.http.post<ResponseHttp>(environment.apiUrl + 'api/vehicles', vehicle).pipe(
+      map((data) => {
+        return data.data.item;
+      }),
+      catchError((error) => {
+        return throwError(error);
+      })
+    )
+  }
+
+  updateVehicle(vehicle: Vehicle) {
+    return this.http.put<ResponseHttp>(environment.apiUrl + 'api/vehicles/' + vehicle.id, vehicle).pipe(
+      map((data) => {
+        return data.data.item;
+      }),
+      catchError((error) => {
+        return throwError(error);
+      })
+    )
+  }
 }
