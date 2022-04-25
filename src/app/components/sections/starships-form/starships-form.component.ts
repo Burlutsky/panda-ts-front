@@ -86,6 +86,32 @@ export class StarshipsFormComponent implements OnInit {
   get f() {return this.form.controls}
 
   onSubmit() {
+    if (this.form.invalid) {
+      return;
+    }
 
+    Object.assign(this.starship, this.form.value);
+
+    if (this.id) {
+      this.updateStarship();
+    } else {
+      this.storeStarship();
+    }
+  }
+
+  private storeStarship() {
+    this.starshipService.storeStarship(this.starship).subscribe((data) => {
+      if (data) {
+        this.route.navigate(['starships']);
+      }
+    });
+  }
+
+  private updateStarship() {
+    this.starshipService.updateStarship(this.starship).subscribe((data) => {
+      if (data) {
+        this.route.navigate(['starships']);
+      }
+    });
   }
 }

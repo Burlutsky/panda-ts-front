@@ -36,4 +36,28 @@ export class StarshipService {
       })
     )
   }
+
+
+
+  storeStarship(starship: Starship): Observable<Starship> {
+    return this.http.post<ResponseHttp>(environment.apiUrl + 'api/starships', starship).pipe(
+      map((data) => {
+        return data.data.item;
+      }),
+      catchError((error) => {
+        return throwError(error);
+      })
+    )
+  }
+
+  updateStarship(starship: Starship) {
+    return this.http.put<ResponseHttp>(environment.apiUrl + 'api/starships/' + starship.id, starship).pipe(
+      map((data) => {
+        return data.data.item;
+      }),
+      catchError((error) => {
+        return throwError(error);
+      })
+    )
+  }
 }
