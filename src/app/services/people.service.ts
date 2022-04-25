@@ -29,7 +29,6 @@ export class PeopleService {
   getPerson(id: number): Observable<People> {
     return this.http.get<ResponseHttp>(environment.apiUrl + 'api/people/' + id).pipe(
       map((data) => {
-        console.log(data);
         return data.data.item;
       }),
       catchError((error) => {
