@@ -25,4 +25,15 @@ export class StarshipService {
       })
     )
   }
+
+  getStarship(id: number): Observable<Starship> {
+    return this.http.get<ResponseHttp>(environment.apiUrl + 'api/starships/' + id).pipe(
+      map((data) => {
+        return data.data.item;
+      }),
+      catchError((error) => {
+        return throwError(error)
+      })
+    )
+  }
 }
